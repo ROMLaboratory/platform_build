@@ -47,7 +47,7 @@ TARGET_GCC_VERSION_ARM := $(TARGET_GCC_VERSION_ARM)
 endif
 
 # Specify Target Custom GCC Chains to use:
-TARGET_GCC_VERSION_AND := 4.8
+TARGET_GCC_VERSION_AND := 4.7
 TARGET_GCC_VERSION_ARM := 4.7
 
 TARGET_ARCH_SPECIFIC_MAKEFILE := $(BUILD_COMBOS)/arch/$(TARGET_ARCH)/$(TARGET_ARCH_VARIANT).mk
@@ -83,7 +83,7 @@ TARGET_arm_CFLAGS :=    -O3 \
                         -fno-tree-vectorize \
                         -fno-inline-functions \
                         -fstrict-aliasing    \
-                        -Wstrict-aliasing=3 \
+                        -Wstrict-aliasing \
                         -Werror=strict-aliasing
 
   
@@ -92,7 +92,7 @@ TARGET_thumb_CFLAGS :=  -mthumb \
                         -O3 \
                         -fomit-frame-pointer \
                         -fstrict-aliasing \
-                        -Wstrict-aliasing=3 \
+                        -Wstrict-aliasing \
                         -Werror=strict-aliasing \
                         -fno-tree-vectorize \
                         -fno-inline-functions \
@@ -134,7 +134,7 @@ TARGET_GLOBAL_CFLAGS += \
                         -Werror=format-security \
                         -D_FORTIFY_SOURCE=2 \
                         -fno-short-enums \
-                        -Wstrict-aliasing=3 \
+                        -Wstrict-aliasing \
                         -Werror=strict-aliasing \
                         $(arch_variant_cflags) \
                         -include $(android_config_h) \
@@ -178,7 +178,7 @@ TARGET_GLOBAL_CPPFLAGS += -fvisibility-inlines-hidden
 TARGET_RELEASE_CFLAGS := \
                         -DNDEBUG \
                         -g \
-                        -Wstrict-aliasing=3 \
+                        -Wstrict-aliasing \
                         -Werror=strict-aliasing \
                         -fgcse-after-reload \
                         -frerun-cse-after-loop \
